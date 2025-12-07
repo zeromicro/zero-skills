@@ -2,6 +2,25 @@
 
 This directory contains example scripts and demo code for zero-skills tutorials.
 
+## demo-project/
+
+完整的 GitHub Copilot + go-zero 演示项目。自动创建配置了 ai-context 的 go-zero 项目，用于验证 AI 辅助开发效果。
+
+**快速开始：**
+
+```bash
+cd demo-project
+./setup-demo.sh
+```
+
+**详细文档：** [demo-project/README.md](demo-project/README.md)
+
+**包含功能：**
+- ✅ 自动配置 GitHub Copilot（ai-context submodule）
+- ✅ 创建完整的 go-zero REST API 项目
+- ✅ 提供多个测试场景验证 Copilot 效果
+- ✅ 包含验证脚本确认配置正确
+
 ## verify-tutorial.sh
 
 验证 AI 工具生态配置教程的完整性和正确性。
