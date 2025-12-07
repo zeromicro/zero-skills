@@ -357,5 +357,4 @@ go-zero AI 工具生态通过三个项目的协同配合，为开发者提供了
 
 **加入社区**：
 
-- Discord: https://discord.gg/4JQvC5A4Fe
-- 微信群：扫码加入 go-zero 开发者社区
+- 微信群：go-zero 仓库中文 readme 扫码加入 go-zero 开发者社区
