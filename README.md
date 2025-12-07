@@ -1,5 +1,7 @@
 # go-zero Skills for AI Agents
 
+English | [简体中文](README_CN.md)
+
 This repository contains structured knowledge and patterns for AI coding assistants to help developers work effectively with the [go-zero](https://github.com/zeromicro/go-zero) framework.
 
 ## Purpose
@@ -36,6 +38,16 @@ To use these materials with your AI coding assistant:
 1. Reference this repository in your AI agent's context
 2. Ask specific questions about go-zero patterns
 3. Request code generation following these patterns
+
+## Integration with go-zero AI Ecosystem
+
+zero-skills is part of the go-zero AI tools ecosystem:
+
+- **[ai-context](https://github.com/zeromicro/ai-context)** - Concise instructions for GitHub Copilot
+- **zero-skills** (this repo) - Detailed knowledge base for all AI assistants
+- **[mcp-zero](https://github.com/zeromicro/mcp-zero)** - Runtime tools for Claude Desktop
+
+See [AI Ecosystem Guide](articles/ai-ecosystem-guide.md) for details.
 
 ## Contributing
 
