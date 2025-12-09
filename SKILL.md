@@ -1,5 +1,5 @@
 ---
-name: go-zero-skills
+name: zero-skills
 description: Comprehensive knowledge base for go-zero microservices framework. Use this skill when working with go-zero to understand correct patterns for REST APIs (Handler/Logic/Context architecture), RPC services (service discovery, load balancing), database operations (sqlx, MongoDB, caching), resilience patterns (circuit breaker, rate limiting), and troubleshooting common issues. Essential for generating production-ready go-zero code that follows framework conventions.
 license: Apache-2.0
 ---
@@ -84,7 +84,7 @@ See [articles/ai-ecosystem-guide.md](articles/ai-ecosystem-guide.md) for complet
 ## Project Structure
 
 ```
-go-zero-skills/
+zero-skills/
 ├── SKILL.md                    # This file - skill entry point
 ├── getting-started/            # Quick start guides
 │   └── quick-start.md

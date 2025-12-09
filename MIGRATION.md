@@ -23,7 +23,7 @@ zero-skills/
 
 **After:**
 ```
-go-zero-skills/
+zero-skills/
 ├── SKILL.md                # NEW: Entry point with YAML frontmatter
 ├── references/             # RENAMED: patterns/ → references/
 │   ├── rest-api-patterns.md

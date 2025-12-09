@@ -22,12 +22,12 @@ This skill enables AI agents (Claude, GitHub Copilot, Cursor, etc.) to:
 Following the [Agent Skills Spec](https://github.com/anthropics/skills/blob/main/spec/agent-skills-spec.md):
 
 ```
-go-zero-skills/
+zero-skills/
 ├── SKILL.md                    # Entry point with YAML frontmatter
 ├── getting-started/            # Quick start guides
 ├── references/                 # Detailed pattern documentation
 │   ├── rest-api-patterns.md    # REST API development patterns
-│   ├── rpc-patterns.md         # gRPC service patterns  
+│   ├── rpc-patterns.md         # gRPC service patterns
 │   ├── database-patterns.md    # Database operations
 │   └── resilience-patterns.md  # Resilience and fault tolerance
 ├── best-practices/             # Production recommendations

@@ -22,7 +22,7 @@ Skills 是包含指令、脚本和资源的文件夹，AI 智能体可以动态�
 遵循 [Agent Skills 规范](https://github.com/anthropics/skills/blob/main/spec/agent-skills-spec.md)：
 
 ```
-go-zero-skills/
+zero-skills/
 ├── SKILL.md                    # 入口文件，包含 YAML 元数据
 ├── getting-started/            # 快速开始指南
 ├── references/                 # 详细模式文档
