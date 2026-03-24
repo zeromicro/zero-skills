@@ -7,6 +7,7 @@ description: |
   - Building REST APIs with go-zero (Handler → Logic → Model architecture)
   - Creating RPC services with service discovery and load balancing
   - Implementing database operations with sqlx, MongoDB, or Redis caching
+  - Using high-performance data structures (LRU Cache, Ring Buffer, TimingWheel, SafeMap)
   - Adding resilience patterns (circuit breaker, rate limiting, load shedding)
   - Troubleshooting go-zero issues or understanding framework conventions
   - Generating production-ready microservices code
@@ -25,13 +26,14 @@ allowed-tools:
 
 # go-zero Skills for AI Agents
 
-This skill provides comprehensive go-zero microservices framework knowledge, optimized for AI agents helping developers build production-ready services. It covers REST APIs, RPC services, database operations, resilience patterns, and troubleshooting.
+This skill provides comprehensive go-zero microservices framework knowledge, optimized for AI agents helping developers build production-ready services. It covers REST APIs, RPC services, database operations, resilience patterns, high-performance data structures, and troubleshooting.
 
 ## 🎯 When to Use This Skill
 
 Invoke this skill when working with go-zero:
 - **Creating services**: REST APIs, gRPC services, or microservices architectures
 - **Database integration**: SQL, MongoDB, Redis, or connection pooling
+- **Data structures**: LRU Cache, Ring Buffer, TimingWheel, or concurrent maps
 - **Production hardening**: Circuit breakers, rate limiting, or error handling
 - **Debugging**: Understanding errors, fixing configuration, or resolving issues
 - **Learning**: Understanding go-zero patterns and best practices
@@ -86,7 +88,17 @@ This skill organizes go-zero knowledge into focused modules. **Load specific gui
 - Timeout and retry strategies
 - Graceful shutdown and degradation
 
-#### 5. goctl Command Reference
+#### 5. Collection Patterns
+**File**: [references/collection-patterns.md](references/collection-patterns.md)
+**When to load**: Using high-performance data structures, local caching, timeout management
+**Contains**:
+- LRU Cache for local hot data caching (O(1) operations)
+- Ring Buffer for fixed-size circular buffers
+- TimingWheel for efficient timer management (O(1) add/remove/execute)
+- SafeMap for concurrent-safe map operations
+- Memory management best practices and pitfalls
+
+#### 6. goctl Command Reference
 **File**: [references/goctl-commands.md](references/goctl-commands.md)
 **When to load**: Generating code with goctl, setting up new services, post-generation steps
 **Contains**:
@@ -163,6 +175,21 @@ These workflows guide you through typical go-zero development tasks:
 
 **Detailed guide**: [references/rpc-patterns.md](references/rpc-patterns.md#complete-rpc-workflow)
 
+### Using High-Performance Data Structures
+
+**Steps:**
+1. Choose appropriate data structure based on use case:
+   - LRU Cache for local hot data caching
+   - Ring Buffer for fixed-size log/message buffers
+   - TimingWheel for timeout/delayed task management
+   - SafeMap for concurrent-safe key-value storage
+2. Import from `github.com/zeromicro/go-zero/core/collection`
+3. Configure capacity/parameters based on memory constraints
+4. Handle eviction callbacks for resource cleanup (LRU Cache)
+5. Monitor memory usage and rebuild when necessary (SafeMap)
+
+**Detailed guide**: [references/collection-patterns.md](references/collection-patterns.md)
+
 ## ⚡ Key Principles
 
 When generating or reviewing go-zero code, always apply these principles:
@@ -204,7 +231,10 @@ Follow this path based on your needs:
 2. **Add resilience**: [references/resilience-patterns.md](references/resilience-patterns.md)
    Circuit breakers, rate limiting, graceful degradation
 
-3. **Check common pitfalls**: [troubleshooting/common-issues.md](troubleshooting/common-issues.md)
+3. **Optimize data structures**: [references/collection-patterns.md](references/collection-patterns.md)
+   LRU Cache, Ring Buffer, TimingWheel for performance
+
+4. **Check common pitfalls**: [troubleshooting/common-issues.md](troubleshooting/common-issues.md)
    Avoid typical mistakes and know how to debug issues
 
 ### 🔵 Extending capabilities?
