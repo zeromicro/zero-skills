@@ -8,6 +8,10 @@ description: |
   - Creating RPC services with service discovery and load balancing
   - Implementing database operations with sqlx, MongoDB, or Redis caching
   - Adding resilience patterns (circuit breaker, rate limiting, load shedding)
+  - Implementing distributed transactions with DTM (SAGA, TCC patterns)
+  - Setting up observability (Prometheus, Jaeger, ELK)
+  - Processing async tasks with message queues (go-queue, Kafka)
+  - Using advanced components (Bloom filter, MapReduce, TimingWheel)
   - Troubleshooting go-zero issues or understanding framework conventions
   - Generating production-ready microservices code
 
@@ -15,6 +19,8 @@ description: |
   - Complete pattern guides with ✅ correct and ❌ incorrect examples
   - Three-layer architecture enforcement
   - Production best practices
+  - Distributed transaction patterns
+  - Observability and monitoring setup
   - Common pitfall solutions
 license: MIT
 allowed-tools:
@@ -98,6 +104,48 @@ This skill organizes go-zero knowledge into focused modules. **Load specific gui
 - Middleware and error handler templates
 - API spec patterns (CRUD, JWT, mixed auth)
 
+#### 6. Distributed Transaction Patterns
+**File**: [references/distributed-transactions.md](references/distributed-transactions.md)
+**When to load**: Cross-service data consistency, DTM integration, SAGA/TCC patterns
+**Contains**:
+- DTM integration with go-zero
+- SAGA pattern for long-running transactions
+- TCC pattern for financial operations
+- 2-Phase message for DB + cache consistency
+- Barrier pattern for idempotency
+- Configuration and error handling
+
+#### 7. Observability Patterns
+**File**: [references/observability.md](references/observability.md)
+**When to load**: Production monitoring, tracing, alerting setup
+**Contains**:
+- Prometheus metrics configuration
+- Custom metrics implementation
+- Distributed tracing with OpenTelemetry/Jaeger
+- Structured logging with logx
+- Grafana dashboards and alerting rules
+- ELK integration for log aggregation
+
+#### 8. Message Queue Patterns
+**File**: [references/message-queue.md](references/message-queue.md)
+**When to load**: Async processing, delayed tasks, event streaming
+**Contains**:
+- go-queue dq (Beanstalkd) for delayed tasks
+- go-queue kq (Kafka) for high-throughput messaging
+- Producer and consumer patterns
+- Delay queue and retry patterns
+- Configuration and error handling
+
+#### 9. Advanced Components
+**File**: [references/advanced-components.md](references/advanced-components.md)
+**When to load**: Performance optimization, concurrent processing, caching
+**Contains**:
+- Bloom filter for cache penetration prevention
+- TimingWheel for delayed task scheduling
+- MapReduce for parallel processing
+- Executors for batch task buffering
+- SharedCalls (SingleFlight) for duplicate prevention
+
 ### Supporting Resources
 
 #### Best Practices
@@ -114,6 +162,16 @@ This skill organizes go-zero knowledge into focused modules. **Load specific gui
 **File**: [getting-started/claude-code-guide.md](getting-started/claude-code-guide.md)
 **When to load**: Setting up Claude Code for zero-skills usage
 **Contains**: Installation, invocation methods, advanced features (subagents, dynamic context)
+
+#### Design Principles
+**File**: [design/principles.md](design/principles.md)
+**When to load**: Understanding framework philosophy, architecture decisions
+**Contains**: Three-layer architecture rationale, design decisions, performance considerations, anti-patterns
+
+#### Case Study: go-zero-looklook
+**File**: [examples/case-studies/looklook-overview.md](examples/case-studies/looklook-overview.md)
+**When to load**: Learning from production-scale example, real-world architecture
+**Contains**: Large-scale microservice architecture, service breakdown, key patterns, deployment setup
 
 ## 🚀 Common Workflows
 
@@ -206,6 +264,26 @@ Follow this path based on your needs:
 
 3. **Check common pitfalls**: [troubleshooting/common-issues.md](troubleshooting/common-issues.md)
    Avoid typical mistakes and know how to debug issues
+
+4. **Set up observability**: [references/observability.md](references/observability.md)
+   Prometheus metrics, distributed tracing, structured logging
+
+### 🔴 Advanced scenarios?
+
+1. **Distributed transactions**: [references/distributed-transactions.md](references/distributed-transactions.md)
+   DTM integration, SAGA/TCC patterns, data consistency
+
+2. **Message queues**: [references/message-queue.md](references/message-queue.md)
+   go-queue for async processing, delayed tasks, Kafka integration
+
+3. **Performance optimization**: [references/advanced-components.md](references/advanced-components.md)
+   Bloom filter, MapReduce, TimingWheel, SharedCalls
+
+4. **Understand design**: [design/principles.md](design/principles.md)
+   Framework philosophy, architecture decisions, anti-patterns
+
+5. **Learn from examples**: [examples/case-studies/looklook-overview.md](examples/case-studies/looklook-overview.md)
+   Production-scale architecture, real-world patterns
 
 ### 🔵 Extending capabilities?
 
