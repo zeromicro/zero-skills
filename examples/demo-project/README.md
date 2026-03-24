@@ -6,7 +6,7 @@ This demo project demonstrates how to use GitHub Copilot + ai-context to develop
 
 ### Prerequisites
 
-- Go 1.19+
+- Go 1.23+
 - Git
 - VS Code with GitHub Copilot extension
 - goctl (will be installed automatically)

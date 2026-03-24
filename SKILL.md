@@ -243,8 +243,8 @@ See [getting-started/claude-code-guide.md](getting-started/claude-code-guide.md)
 
 ## 📝 Version Compatibility
 
-- **Target version**: go-zero 1.5+
-- **Go version**: Go 1.19 or later recommended
+- **Target version**: go-zero 1.10+
+- **Go version**: Go 1.23 or later required
 - **Updates**: Patterns updated regularly to reflect framework evolution
 - **Breaking changes**: Check official docs for API changes between versions
 
