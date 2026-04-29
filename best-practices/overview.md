@@ -610,7 +610,7 @@ func (l *CreateUserLogic) CreateUser(req *types.CreateUserRequest) (*types.Creat
 ### ✅ JWT Authentication
 
 ```go
-import "github.com/golang-jwt/jwt/v4"
+import "github.com/golang-jwt/jwt/v5"
 
 func generateToken(userId int64, secret string, expire int64) (string, error) {
     now := time.Now().Unix()
@@ -627,8 +627,11 @@ func generateToken(userId int64, secret string, expire int64) (string, error) {
 
 func validateToken(tokenString, secret string) (int64, error) {
     token, err := jwt.Parse(tokenString, func(token *jwt.Token) (interface{}, error) {
+        if _, ok := token.Method.(*jwt.SigningMethodHMAC); !ok {
+            return nil, fmt.Errorf("unexpected signing method: %v", token.Header["alg"])
+        }
         return []byte(secret), nil
-    })
+    }, jwt.WithValidMethods([]string{"HS256"}))
 
     if err != nil || !token.Valid {
         return 0, errors.New("invalid token")
