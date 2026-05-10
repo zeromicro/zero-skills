@@ -84,6 +84,19 @@ This skill organizes go-zero knowledge into focused modules. **Load specific gui
 - Middleware and error handler templates
 - API spec patterns (CRUD, JWT, mixed auth)
 
+#### 6. Swagger / OpenAPI Documentation
+**File**: [references/swagger-patterns.md](references/swagger-patterns.md)
+**When to load**: Generating Swagger/OpenAPI docs from `.api` files, adding API documentation annotations
+**Contains**:
+- Built-in `goctl api swagger` command reference (goctl ≥ 1.8.2, no plugin needed)
+- `info` block metadata: title, description, host, basePath, schemes, useDefinitions, wrapCodeMsg
+- `@server` tags for Swagger UI grouping
+- `@doc` for endpoint summary/description
+- Field tags: `example`, `options` (enum), `range`, `default`, `optional`
+- Security definitions (`securityDefinitionsFromJson` + `authType`)
+- Business error codes (`bizCodeEnumDescription`)
+- Complete multi-file `.api` structure example with best practices
+
 ### Supporting Resources
 
 #### Best Practices
@@ -153,6 +166,17 @@ These workflows guide you through typical go-zero development tasks:
 5. Test with RPC client and handle errors
 
 **Detailed guide**: [references/rpc-patterns.md](references/rpc-patterns.md#complete-rpc-workflow)
+
+### Generating Swagger Documentation
+
+**Steps:**
+1. Add `info` block with swagger metadata (title, host, basePath, schemes) to entry `.api` file
+2. Add `tags` in `@server` blocks for Swagger UI grouping
+3. Add `@doc` summary to each endpoint
+4. Add `example`/`options`/`range` tags to request/response fields
+5. Run `goctl api swagger --api entry.api --dir docs/swagger --filename api`
+
+**Detailed guide**: [references/swagger-patterns.md](references/swagger-patterns.md)
 
 ## ⚡ Key Principles
 
